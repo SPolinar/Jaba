@@ -1,6 +1,10 @@
 const { getRandomNumber, getRandomArray,  }  = require('./utils/random');
 const { checkArraySort} = require('./utils/array');
-const correctlySortedArray = [1,2,3,4,5];
-const incorrectlySortedArray = [3,5,6,7,5];
-console.log (checkArraySort (correctlySortedArray));
-console.log (checkArraySort (incorrectlySortedArray));
+const {bugusSort} = require('./sorts/bogusSort');
+//const correctlySortedArray = [5,4,3,2,3];
+//const incorrectlySortedArray = [3,1,9,7,5];
+let a=getRandomArray(100,0,1000);
+let b=bugusSort (a);
+console.log (b);
+console.log (checkArraySort (b));
+//console.log (getRandomArray (3));
