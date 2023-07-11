@@ -1,0 +1,24 @@
+function InsertionSort(array) {
+    let exchengeIndex=0;
+    let currentValue=0;
+    for (let i=1; i < array.length; i++){
+        currentValue=array[i];
+        let isShiftNeeded = false;
+        for (let j=0; (j < i) && !isShiftNeeded; j++){
+            if (array[j]>array[i]) {
+                exchengeIndex=j;
+                isShiftNeeded=true;
+            }
+        }
+        if (isShiftNeeded){
+            for (let e=i-1; e>=exchengeIndex; e--){
+                array[e+1]=array[e];
+            } 
+            array[exchengeIndex]=currentValue;
+        }
+    } 
+    return array;
+}
+module.exports = {
+    InsertionSort
+}
